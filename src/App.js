@@ -1,23 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
 
+const question = ["what is the equation for force?", "F=ma", "F=a/m" , "s=v/t" , "a = v-u/t", "F=ma"]
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Example Quiz
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <body>
+      <p className="question" id ="q1">{question[0]}</p>
+      <p className="answer" id = "ansA"> {question[1]}</p>
+      <p className="answer" id = "ansB"> {question[2]}</p>
+      <p className="answer" id = "ansB"> {question[3]}</p>
+      <p className="answer" id = "ansB"> {question[4]}</p>
+      </body>
     </div>
   );
 }
