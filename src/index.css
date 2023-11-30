@@ -13,3 +13,8 @@ code {
 }
 
 /* test */
+
+.nav-bar {
+  text-align: center;
+  border: 3px solid green;
+}
