@@ -4,11 +4,11 @@ const question = ["what is the equation for force?", "F=ma", "F=a/m" , "s=v/t" ,
 function Quiz() {
     return (
       <div className="App">
-        <header className="App-header">
+        <div className="App-header">
           <p>
             Example Quiz
           </p>
-        </header>
+        </div>
         <body>
         <p className="question" id ="q1">{question[0]}</p>
         <p className="answer" id = "ansA"> {question[1]}</p>
