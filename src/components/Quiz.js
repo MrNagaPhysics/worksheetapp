@@ -27,7 +27,6 @@ function Quiz() {
     if (questionIndex+1 < samplequestions.length) {
       setQuestionIndex(questionIndex+1);
     }
-  
   }
 
     return (
@@ -44,7 +43,7 @@ function Quiz() {
 
           ))}
           <Box mt={5}>
-            Score: {questionIndex}/{samplequestions.length}
+            Score: {questionIndex+1}/{samplequestions.length}
           </Box>
       </Box>
     );}
