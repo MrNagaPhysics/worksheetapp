@@ -6,7 +6,7 @@
         "question": "Define acceleration",
         "answers":["rate of change of displacement","change in speed per unit time", "force per unit mass",
         "rate of change of velocity"],
-        "correct_answer": "F = ma"
+        "correct_answer": "rate of change of velocity"
     },
 
     {
@@ -14,7 +14,7 @@
         "difficulty": "medium",
         "category": "forces",
         "question": "What is the equation for force, acceleration and mass?",
-        "answers":["a = v-u/t","KE = 1/2mv^2", "F  ma",
+        "answers":["a = v-u/t","KE = 1/2mv^2", "F = ma",
         "s = vt"],
         "correct_answer": "F = ma"
     },
@@ -25,7 +25,7 @@
         "question": "State Newton's 1st law",
         "answers":["F = ma","Objects stay at rest or constant velocity if resultant force = 0N", " every action has an equal and opposite reaction",
         "total momentum before and event = total momentum after an event"],
-        "correct_answer": "F = ma"
+        "correct_answer": "Objects stay at rest or constant velocity if resultant force = 0N"
     }
 ]
 

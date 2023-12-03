@@ -1,9 +1,8 @@
 import { Box, Button, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import samplequestions from "./samplequestions.json"
-
-
+import {handleScoreChange} from "../redux/actions"
 
 
 function Quiz() {
@@ -18,12 +17,14 @@ function Quiz() {
     };
   }, [samplequestions, questionIndex]);
   
-  const {
-    question_category,score
-  } =useSelector(state=>state);
-  console.log(question_category, score)
+const score = useSelector(state => state.score);
+const dispatch = useDispatch();
 
-  const handleClickAnswer = () => {
+  const handleClickAnswer = (e) => {
+    if(e.target.textContent === samplequestions[questionIndex].correct_answer){
+      dispatch(handleScoreChange(score+1));
+    }   
+      
     if (questionIndex+1 < samplequestions.length) {
       setQuestionIndex(questionIndex+1);
     }
@@ -43,7 +44,7 @@ function Quiz() {
 
           ))}
           <Box mt={5}>
-            Score: {questionIndex+1}/{samplequestions.length}
+            Score: {score}/{samplequestions.length}
           </Box>
       </Box>
     );}
