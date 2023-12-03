@@ -1,14 +1,14 @@
 [
     {
-        "type": "boolean",
-        "difficulty": "easy",
-        "category": "Entertainment: Japanese Anime &amp; Manga",
-        "question": "No Game No Life first aired in 2014.",
-        "correct_answer": "True",
-        "incorrect_answers": [
-            "False"
-        ]
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "forces",
+        "question": "Define acceleration",
+        "answers":["rate of change of displacement","change in speed per unit time", "force per unit mass",
+        "rate of change of velocity"],
+        "correct_answer": "F = ma"
     },
+
     {
         "type": "multiple",
         "difficulty": "medium",
