@@ -1,0 +1,33 @@
+[
+    {
+        "type": "boolean",
+        "difficulty": "easy",
+        "category": "Entertainment: Japanese Anime &amp; Manga",
+        "question": "No Game No Life first aired in 2014.",
+        "correct_answer": "True",
+        "incorrect_answers": [
+            "False"
+        ]
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "forces",
+        "question": "What is the equation for force, acceleration and mass?",
+        "answers":["a = v-u/t","KE = 1/2mv^2", "F  ma",
+        "s = vt"],
+        "correct_answer": "F = ma"
+    },
+    {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "forces",
+        "question": "State Newton's 1st law",
+        "answers":["F = ma","Objects stay at rest or constant velocity if resultant force = 0N", " every action has an equal and opposite reaction",
+        "total momentum before and event = total momentum after an event"],
+        "correct_answer": "F = ma"
+    }
+]
+
+
+    
