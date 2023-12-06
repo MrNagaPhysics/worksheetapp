@@ -1,14 +1,16 @@
 import { Box, Button, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import samplequestions from "./samplequestions.json"
-import {handleScoreChange} from "../redux/actions"
+import samplequestions from "./samplequestions.json";
+import {handleScoreChange} from "../redux/actions";
+import { useNavigate } from "react-router-dom";
 
 
 function Quiz() {
 
   const [questionIndex, setQuestionIndex] = useState(0);
   const [options,setOptions] = useState([]);
+  const navigate = useNavigate()
 
   useEffect(() => {
     if(samplequestions?.length){
@@ -27,6 +29,8 @@ const dispatch = useDispatch();
       
     if (questionIndex+1 < samplequestions.length) {
       setQuestionIndex(questionIndex+1);
+    } else {
+      navigate("/score");
     }
   }
 
