@@ -76,9 +76,17 @@ const dispatch = useDispatch();
     setResult(false);
   }
 
+  const home = () => {
+    setQuestionIndex(0);
+    dispatch(handleScoreChange(0));
+    setLock(false);
+    setResult(false);
+    dispatch(handleScoreChange(0));
+    navigate("/");
+  }
+
     return (
       <Box>
-          <Typography variant="h4" fontWeight="bold">Quiz App</Typography>
           <Stack>
             <LinearProgress variant="determinate" value={((questionIndex)+(result?(1):(0)))/(samplequestions.length)*100} />;
           </Stack>
@@ -93,12 +101,15 @@ const dispatch = useDispatch();
             <li ref={Option4} onClick={handleClickAnswer} >{options[3]}</li>
           </ul>
           <button onClick={next}>Next</button>
-
-          <Box mt={5}>
-            Score: {score}/{samplequestions.length}
-          </Box></>}
+          </>}
+          
           {result?<><h2>You Scored {score} out of {samplequestions.length} </h2>
-          <button onClick={reset}>Reset</button></>:<></>}
+          <Stack direction="row">
+          <button onClick={reset}>Reset</button>
+          <button onClick={home}>Home</button>
+          </Stack>
+         
+          </>:<></>}
           
       </Box>
     );}
