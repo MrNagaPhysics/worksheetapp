@@ -1,5 +1,6 @@
 import './App.css';
 import FinalScreen from './components/FinalScreen';
+import Home from './components/Home';
 import Quiz from "./components/Quiz"
 import { Box, Container } from '@mui/material';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
@@ -10,7 +11,11 @@ function App() {
         <Box textAlign="center" mt={5}>
           <Router>
             <Routes>
-            <Route exact path="/" element = {<Quiz />} />
+            <Route exact path="/quiz" element = {<Quiz />} />
+            </Routes>
+
+            <Routes>
+            <Route exact path="/" element = {<Home  />} />
             </Routes>
 
             <Routes>

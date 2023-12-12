@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Typography, LinearProgress, Stack} from "@mui/material";
 import { useEffect, useState, useRef} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import samplequestions from "./samplequestions.json";
@@ -79,7 +79,10 @@ const dispatch = useDispatch();
     return (
       <Box>
           <Typography variant="h4" fontWeight="bold">Quiz App</Typography>
-          <hr />
+          <Stack>
+            <LinearProgress variant="determinate" value={((questionIndex)+(result?(1):(0)))/(samplequestions.length)*100} />;
+          </Stack>
+
           {result?<></>:<>
           <Typography mt={2} fontSize={20}>{questionIndex+1}. {samplequestions[questionIndex].question}</Typography>
 
