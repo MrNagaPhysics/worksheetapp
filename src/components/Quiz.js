@@ -88,7 +88,7 @@ const dispatch = useDispatch();
     return (
       <Box>
           <Stack>
-            <LinearProgress variant="determinate" value={((questionIndex)+(result?(1):(0)))/(samplequestions.length)*100} />;
+            <LinearProgress variant="determinate" value={((questionIndex)+(result?(1):(0)))/(samplequestions.length)*100} />
           </Stack>
 
           {result?<></>:<>
