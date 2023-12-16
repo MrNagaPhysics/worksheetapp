@@ -1,0 +1,45 @@
+
+
+hr{
+    height:2px;
+    border: none;
+    background: black;
+}
+
+ul li{
+    display: flex;
+    align-items: center;
+    height: 70px;
+    padding-left: 15px;
+    border: 1px solid   #686868;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+ul {
+    padding-left:0;
+}
+
+button {
+    margin: auto;
+    width: 250px;
+    height: 65px;
+    background-color: blue;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.correct{
+    background: #dffff2;
+    border-color: #00d397;
+}
+
+.wrong{
+    background: #FFEBEB;
+    border-color: #FF4A4A;
+}
