@@ -20,24 +20,24 @@ function Quiz() {
   let [result,setResult] = useState(false);
   const { id } = useParams()
   console.log(id)
-  const hook = () => {
-    // Intialise variables with state using mock api data
-    axios 
-      .get(`https://mrnagaphysics.com/main/apps/questions/api/worksheet_questions/${id}/`)
-      .then(
-        response => {
-          setAllQuestions(response.data)
-          setLength(response.data.length)
+  // const hook = () => {
+  //   // Intialise variables with state using mock api data
+  //   axios 
+  //   .get(`https://mrnagaphysics.com/main/apps/questions/api/worksheet_questions/${id}/`)
+  //     .then(
+  //       response => {
+  //         setAllQuestions(response.data)
+  //         setLength(response.data.length)
   
-          //Question specific data
-          setQuestionTitle(response.data[questionIndex].question_text)
-          setMCQOptions(response.data[questionIndex].mcqs)
-          setExplanation(response.data[questionIndex].explanation)
-        }
-      )
+  //         //Question specific data
+  //         setQuestionTitle(response.data[questionIndex].question_text)
+  //         setMCQOptions(response.data[questionIndex].mcqs)
+  //         setExplanation(response.data[questionIndex].explanation)
+  //       }
+  //     )
 
-  };
-  useEffect(hook)
+  // };
+  // useEffect(hook)
 
   const handleClickAnswer = (event) => {
     if(lock ===false){
