@@ -17,7 +17,7 @@ const Home = () => {
         <Box>  
             <Typography variant="h4" fontWeight="bold">Quiz App</Typography>
             <ul>
-            <li onClick={handleClick} >Forces</li>
+            <li onClick={handleClick} >List of available quizzes here</li>
             </ul>
             </Box>
       

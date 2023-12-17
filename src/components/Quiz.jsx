@@ -105,7 +105,7 @@ function Quiz() {
     setLock(false);
     setResult(false);
     setScore(0);
-    navigate("/");
+    navigate("www.mrnagaphysics.com");
   }
 
     return (
