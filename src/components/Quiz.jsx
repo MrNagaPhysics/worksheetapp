@@ -1,10 +1,11 @@
-import { Box, Typography, LinearProgress, Stack} from "@mui/material";
+import { Box, Typography, LinearProgress, Stack, Grid} from "@mui/material";
 import { useEffect, useState} from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from 'axios';
 import "./Quiz.css"
-
-
+import data from './testData.json'
+import Explanation from "./Explanation";
+//
 function Quiz() {
   const [allQuestions, setAllQuestions] = useState([]) //Used to store data for all questions within worksheet
   const [questionIndex, setQuestionIndex] = useState(0); // Used to store current index of question being practiced by user
@@ -18,10 +19,11 @@ function Quiz() {
   const [length, setLength] = useState(0) // Integer which is number of questions within the worksheet
   const navigate = useNavigate();
   let [result,setResult] = useState(false);
+  const [isCorrect, setIsCorrect] = useState(null)
+
+  // Uncomment when in prod environment
   const { id } = useParams()
-  console.log(id)
   const hook = () => {
-    // Intialise variables with state using mock api data
     axios 
     .get(`https://mrnagaphysics.com/main/apps/questions/api/worksheet_questions/${id}/`)
       .then(
@@ -39,6 +41,15 @@ function Quiz() {
   };
   useEffect(hook,[]);
 
+  // // Uncomment when in local environment
+  // useEffect(() => {
+  //   setAllQuestions(data)
+  //   setLength(data.length)
+  //   setQuestionTitle(data[questionIndex].question_text)
+  //   setMCQOptions(data[questionIndex].mcqs)
+  //   setExplanation(data[questionIndex].explanation)
+  // }, [])
+
   const handleClickAnswer = (event) => {
     if(lock ===false){
         // Retrieve MCQ object based on option that user clicked on. Access the is_answer property to determine if user's answer is correct or not
@@ -49,6 +60,7 @@ function Quiz() {
             let newScore = score + 1
             setScore(newScore)
             event.target.classList.add("correct")
+            setIsCorrect(true)
         }
         else {
             event.target.classList.add("wrong")
@@ -56,6 +68,7 @@ function Quiz() {
             const lol = Array.from(document.getElementsByTagName('li'))
             const rightAnswerElement = lol.filter((element) => element.innerHTML === rightAnswerText)[0]
             rightAnswerElement.classList.add("correct")
+            setIsCorrect(false)
         }
         setLock(true)
     }  
@@ -71,8 +84,9 @@ function Quiz() {
         setQuestionIndex(newIndex);
         setQuestionTitle(allQuestions[questionIndex + 1].question_text)
         setMCQOptions(allQuestions[questionIndex + 1].mcqs)
+        setExplanation(allQuestions[questionIndex + 1].explanation)
         setLock(false);
-
+        setIsCorrect(null);
       }
     }
   }
@@ -114,7 +128,19 @@ function Quiz() {
                 )
             }
           </ul>
-          <button onClick={next}>Next</button>
+          
+          
+          <Box>
+            <Grid container my={1} spacing={2}>
+              <Grid item xs={8}>
+              <Explanation explanation={explanation} isCorrect={isCorrect}/>
+              </Grid>
+              <Grid item xs={4}>
+              <button className="next" onClick={next}>Next</button>
+              </Grid>
+            </Grid>
+          </Box>
+          
           </>}
           
           {result?<><h2>You Scored {score} out of {length} </h2>

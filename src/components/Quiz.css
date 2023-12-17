@@ -34,6 +34,18 @@ button {
     cursor: pointer;
 }
 
+.next {
+    margin: auto;
+    width: 150px;
+    height: 65px;
+    background-color: blue;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
 .correct{
     background: #dffff2;
     border-color: #00d397;
