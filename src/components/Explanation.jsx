@@ -6,12 +6,12 @@ const Explanation = ({ explanation, isCorrect}) => {
     }
     else if (isCorrect === true) {
         return (
-            explanation ? <Typography fontSize={20}>You got this question correct! Explanation: {explanation}</Typography>:<Typography fontSize={20}>No explanation provided</Typography>
+            explanation ? <Typography fontSize={17}>Correct! Explanation: {explanation}</Typography>:<Typography fontSize={17}>No explanation provided</Typography>
         )
     }
     else if (isCorrect === false) {
         return (
-            explanation ? <Typography fontSize={20}>You got this question incorrect. Explanation: {explanation}</Typography>:<Typography fontSize={20}>No explanation provided</Typography>
+            explanation ? <Typography fontSize={17}>Incorrect, Explanation: {explanation}</Typography>:<Typography fontSize={17}>No explanation provided</Typography>
         )
     }
 

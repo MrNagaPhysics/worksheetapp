@@ -1,10 +1,12 @@
-import { Box, Typography, LinearProgress, Stack, Grid} from "@mui/material";
+import { Box, Typography, LinearProgress, Stack, Grid, Button} from "@mui/material";
 import { useEffect, useState} from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from 'axios';
 import "./Quiz.css"
 import data from './testData.json'
 import Explanation from "./Explanation";
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+
 //
 function Quiz() {
   const [allQuestions, setAllQuestions] = useState([]) //Used to store data for all questions within worksheet
@@ -136,7 +138,7 @@ function Quiz() {
               <Explanation explanation={explanation} isCorrect={isCorrect}/>
               </Grid>
               <Grid item xs={4}>
-              <button className="next" onClick={next}>Next</button>
+              <Button variant="contained" size="large" endIcon={<NavigateNextIcon/>} onClick={next}>Next</Button>
               </Grid>
             </Grid>
           </Box>
@@ -144,9 +146,9 @@ function Quiz() {
           </>}
           
           {result?<><h2>You Scored {score} out of {length} </h2>
-          <Stack direction="row">
-          <button onClick={reset}>Reset</button>
-          <button onClick={home}>Home</button>
+          <Stack mt={5} direction="row" display="flex" justifyContent="space-around">
+          <Button variant="contained" size="large" onClick={reset}>Reset</Button>
+          <Button variant="contained" size="large" onClick={home}>Home</Button>
           </Stack>
          
           </>:<></>}

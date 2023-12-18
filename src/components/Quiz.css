@@ -16,13 +16,20 @@ ul li{
     margin-bottom: 20px;
     font-size: 20px;
     cursor: pointer;
+    background-color: #FAFAFA;
+    box-shadow: 0 5px 0 #DDDDDD;
+}
+
+ul li:active{
+    box-shadow: none;
+    transform: translateY(5px);
 }
 
 ul {
     padding-left:0;
 }
 
-button {
+/* button {
     margin: auto;
     width: 250px;
     height: 65px;
@@ -32,7 +39,7 @@ button {
     font-weight: 500;
     border-radius: 8px;
     cursor: pointer;
-}
+} */
 
 .next {
     margin: auto;

@@ -11,7 +11,11 @@ function App() {
         <Box textAlign="center" mt={5}>
           <Router>
             <Routes>
+              {/* uncomment in developenv */}
             <Route exact path="quiz/:id" element = {<Quiz />} />
+
+            {/* uncomment in local env */}
+            {/* <Route exact path="quiz" element = {<Quiz />} /> */}
             </Routes>
 
             <Routes>
