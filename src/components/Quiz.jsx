@@ -23,7 +23,7 @@ function Quiz() {
   let [result,setResult] = useState(false);
   const [isCorrect, setIsCorrect] = useState(null)
 
-  // Uncomment when in prod environment
+  // // Uncomment when in prod environment
   const { id } = useParams()
   const hook = () => {
     axios 
@@ -67,8 +67,8 @@ function Quiz() {
         else {
             event.target.classList.add("wrong")
             const rightAnswerText = mcqOptions.filter((mcqOption) => mcqOption.is_answer === true)[0].choice_text
-            const lol = Array.from(document.getElementsByTagName('li'))
-            const rightAnswerElement = lol.filter((element) => element.innerHTML === rightAnswerText)[0]
+            const currentOptions = Array.from(document.getElementsByTagName('li'))
+            const rightAnswerElement = currentOptions.filter((element) => element.innerHTML === rightAnswerText)[0]
             rightAnswerElement.classList.add("correct")
             setIsCorrect(false)
         }
@@ -99,7 +99,7 @@ function Quiz() {
     setScore(0)
     setLock(false);
     setResult(false);
-    setExplanation(null)
+    setIsCorrect(null)
   }
 
   const home = () => {
