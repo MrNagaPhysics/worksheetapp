@@ -99,6 +99,7 @@ function Quiz() {
     setScore(0)
     setLock(false);
     setResult(false);
+    setExplanation('')
   }
 
   const home = () => {
