@@ -6,7 +6,7 @@ import "./Quiz.css"
 import data from './testData.json'
 import Explanation from "./Explanation";
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import { MathJax, MathJaxContext} from "better-react-mathjax";
+// import { MathJax, MathJaxContext} from "better-react-mathjax";
 
 //
 function Quiz() {
@@ -113,15 +113,21 @@ function Quiz() {
   }
 
     return (
-      <MathJaxContext>
         <Box>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
             <Stack>
               <LinearProgress variant="determinate" value={((questionIndex)+(result?(1):(0)))/(length)*100} />
             </Stack>
 
             {result?<></>:<>
             <Typography mt={2} fontSize={20}>
-              Question {questionIndex+1}: <MathJax> {questionTitle}</MathJax>
+              Question {questionIndex+1}:{questionTitle}
             </Typography>
 
             <ul>
@@ -130,7 +136,7 @@ function Quiz() {
                       mcq => {
                           return (
                             <li key={mcq.id} onClick={handleClickAnswer} id={mcq.choice_text}>
-                              <MathJax>{mcq.choice_text}</MathJax>
+                              {mcq.choice_text}
                             </li>
                           )
                       }
@@ -161,8 +167,6 @@ function Quiz() {
             </>:<></>}
             
         </Box>        
-      </MathJaxContext>
-
     );}
 
 export default Quiz;
