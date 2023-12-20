@@ -113,7 +113,6 @@ function Quiz() {
   }
 
     return (
-      <MathJaxContext>
         <Box>
             <Stack>
               <LinearProgress variant="determinate" value={((questionIndex)+(result?(1):(0)))/(length)*100} />
@@ -121,7 +120,7 @@ function Quiz() {
 
             {result?<></>:<>
             <Typography mt={2} fontSize={20}>
-              Question {questionIndex+1}: <MathJax> {questionTitle}</MathJax>
+              Question {questionIndex+1}:{questionTitle}
             </Typography>
 
             <ul>
@@ -161,8 +160,6 @@ function Quiz() {
             </>:<></>}
             
         </Box>        
-      </MathJaxContext>
-
     );}
 
 export default Quiz;
