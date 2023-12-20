@@ -1,7 +1,7 @@
 import './App.css';
-import FinalScreen from './components/FinalScreen.js';
-import Home from './components/Home.js';
-import Quiz from "./components/Quiz.jsx"
+import FinalScreen from './components/FinalScreen';
+import Home from './components/Home';
+import Quiz from "./components/Quiz"
 import { Box, Container } from '@mui/material';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import { MathJaxContext } from "better-react-mathjax";
