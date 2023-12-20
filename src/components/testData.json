@@ -66,8 +66,8 @@
         "mcqs": [
             {
                 "id": 21,
-                "choice_text": "1",
-                "is_answer": false
+                "choice_text": "\\(\\frac{10}{4x} \\approx 2^{12}\\)",
+                "is_answer": true
             },
             {
                 "id": 22,
@@ -82,7 +82,7 @@
             {
                 "id": 24,
                 "choice_text": "1000",
-                "is_answer": true
+                "is_answer": false
             }
         ]
     }

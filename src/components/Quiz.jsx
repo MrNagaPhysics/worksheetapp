@@ -6,6 +6,7 @@ import "./Quiz.css"
 import data from './testData.json'
 import Explanation from "./Explanation";
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import { MathJax } from "better-react-mathjax";
 
 //
 function Quiz() {
@@ -55,7 +56,7 @@ function Quiz() {
   const handleClickAnswer = (event) => {
     if(lock ===false){
         // Retrieve MCQ object based on option that user clicked on. Access the is_answer property to determine if user's answer is correct or not
-        const mcqText = event.target.innerHTML 
+        const mcqText = event.target.id
         const selectedMCQObject = mcqOptions.filter((mcqOption) => mcqOption.choice_text === mcqText)[0]
         const answerCorrect = selectedMCQObject.is_answer
         if (answerCorrect) {
@@ -68,7 +69,7 @@ function Quiz() {
             event.target.classList.add("wrong")
             const rightAnswerText = mcqOptions.filter((mcqOption) => mcqOption.is_answer === true)[0].choice_text
             const currentOptions = Array.from(document.getElementsByTagName('li'))
-            const rightAnswerElement = currentOptions.filter((element) => element.innerHTML === rightAnswerText)[0]
+            const rightAnswerElement = currentOptions.filter((element) => element.id === rightAnswerText)[0]
             rightAnswerElement.classList.add("correct")
             setIsCorrect(false)
         }
@@ -97,6 +98,7 @@ function Quiz() {
     setQuestionTitle(allQuestions[0].question_text)
     setMCQOptions(allQuestions[0].mcqs)
     setScore(0)
+    setExplanation(allQuestions[0].explanation)
     setLock(false);
     setResult(false);
     setIsCorrect(null)
@@ -112,20 +114,21 @@ function Quiz() {
   }
 
     return (
+
       <Box>
           <Stack>
             <LinearProgress variant="determinate" value={((questionIndex)+(result?(1):(0)))/(length)*100} />
           </Stack>
 
           {result?<></>:<>
-          <Typography mt={2} fontSize={20}>{questionIndex+1}. {questionTitle}</Typography>
+          <Typography mt={2} fontSize={20}><MathJax>{questionIndex+1}. {questionTitle}</MathJax></Typography>
 
           <ul>
             {
                 mcqOptions.map(
                     mcq => {
                         return (
-                            <li key={mcq.id} onClick={handleClickAnswer}>{mcq.choice_text}</li>
+                            <MathJax><li key={mcq.id} onClick={handleClickAnswer} id={mcq.choice_text}>{mcq.choice_text}</li></MathJax>  
                         )
                     }
                 )
