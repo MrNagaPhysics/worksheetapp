@@ -6,7 +6,7 @@ import "./Quiz.css"
 import data from './testData.json'
 import Explanation from "./Explanation";
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import { MathJax } from "better-react-mathjax";
+import { MathJax, MathJaxContext} from "better-react-mathjax";
 
 //
 function Quiz() {
@@ -20,7 +20,6 @@ function Quiz() {
   const [mcqOptions, setMCQOptions] = useState([]) // Expects array of mcq objects
   const [lock, setLock] = useState(false)
   const [length, setLength] = useState(0) // Integer which is number of questions within the worksheet
-  const navigate = useNavigate();
   let [result,setResult] = useState(false);
   const [isCorrect, setIsCorrect] = useState(null)
 
@@ -114,50 +113,54 @@ function Quiz() {
   }
 
     return (
+      <MathJaxContext>
+        <Box>
+            <Stack>
+              <LinearProgress variant="determinate" value={((questionIndex)+(result?(1):(0)))/(length)*100} />
+            </Stack>
 
-      <Box>
-          <Stack>
-            <LinearProgress variant="determinate" value={((questionIndex)+(result?(1):(0)))/(length)*100} />
-          </Stack>
+            {result?<></>:<>
+            <Typography mt={2} fontSize={20}><MathJax>{questionIndex+1}. {questionTitle}</MathJax></Typography>
 
-          {result?<></>:<>
-          <Typography mt={2} fontSize={20}><MathJax>{questionIndex+1}. {questionTitle}</MathJax></Typography>
-
-          <ul>
-            {
-                mcqOptions.map(
-                    mcq => {
-                        return (
-                            <MathJax><li key={mcq.id} onClick={handleClickAnswer} id={mcq.choice_text}>{mcq.choice_text}</li></MathJax>  
-                        )
-                    }
-                )
-            }
-          </ul>
-          
-          
-          <Box>
-            <Grid container my={1} spacing={2}>
-              <Grid item xs={8}>
-              <Explanation explanation={explanation} isCorrect={isCorrect}/>
+            <ul>
+              {
+                  mcqOptions.map(
+                      mcq => {
+                          return (
+                            <li key={mcq.id} onClick={handleClickAnswer} id={mcq.choice_text}>
+                              <MathJax>{mcq.choice_text}</MathJax>
+                            </li>
+                          )
+                      }
+                  )
+              }
+            </ul>
+            
+            
+            <Box>
+              <Grid container my={1} spacing={2}>
+                <Grid item xs={8}>
+                <Explanation explanation={explanation} isCorrect={isCorrect}/>
+                </Grid>
+                <Grid item xs={4}>
+                <Button variant="contained" size="large" endIcon={<NavigateNextIcon/>} onClick={next}>Next</Button>
+                </Grid>
               </Grid>
-              <Grid item xs={4}>
-              <Button variant="contained" size="large" endIcon={<NavigateNextIcon/>} onClick={next}>Next</Button>
-              </Grid>
-            </Grid>
-          </Box>
+            </Box>
+            
+            </>}
+            
+            {result?<><h2>You Scored {score} out of {length} </h2>
+            <Stack mt={5} direction="row" display="flex" justifyContent="space-around">
+            <Button variant="contained" size="large" onClick={reset}>Reset</Button>
+            <Button variant="contained" size="large" onClick={home}>Home</Button>
+            </Stack>
           
-          </>}
-          
-          {result?<><h2>You Scored {score} out of {length} </h2>
-          <Stack mt={5} direction="row" display="flex" justifyContent="space-around">
-          <Button variant="contained" size="large" onClick={reset}>Reset</Button>
-          <Button variant="contained" size="large" onClick={home}>Home</Button>
-          </Stack>
-         
-          </>:<></>}
-          
-      </Box>
+            </>:<></>}
+            
+        </Box>        
+      </MathJaxContext>
+
     );}
 
 export default Quiz;

@@ -3,27 +3,27 @@
         "worksheet": {
             "worksheet_title": "Density"
         },
-        "question_text": "what is density",
-        "explanation": "use the units",
+        "question_text": "What is the definition of density?",
+        "explanation": "For example the density of aluminium is 2700 kilograms per m^3.",
         "mcqs": [
             {
                 "id": 13,
-                "choice_text": "mass per unit mass",
+                "choice_text": "mass per unit volume",
                 "is_answer": true
             },
             {
                 "id": 14,
-                "choice_text": "ssdfsdf",
+                "choice_text": "The weight of an object.",
                 "is_answer": false
             },
             {
                 "id": 15,
-                "choice_text": "sdfsdfs",
+                "choice_text": "How many particles there are and how much each particle weighs.",
                 "is_answer": false
             },
             {
                 "id": 16,
-                "choice_text": "dfgsdfs",
+                "choice_text": "The amount of kilograms per m^3",
                 "is_answer": false
             }
         ]
@@ -32,28 +32,28 @@
         "worksheet": {
             "worksheet_title": "Density"
         },
-        "question_text": "what is the unit for density",
-        "explanation": "",
+        "question_text": "Which of the following is a unit for density.",
+        "explanation": "Density is mass per unit volume. The standard unit for mass is kg and volume is m^3 but g and cm^-3 is used sometimes.",
         "mcqs": [
             {
                 "id": 17,
-                "choice_text": "asdasd",
+                "choice_text": "kg m^-2",
                 "is_answer": false
             },
             {
                 "id": 18,
-                "choice_text": "asdas",
+                "choice_text": "Nm^-3",
                 "is_answer": false
             },
             {
                 "id": 19,
                 "choice_text": "kgms^-1",
-                "is_answer": true
+                "is_answer": false
             },
             {
                 "id": 20,
-                "choice_text": "asdas",
-                "is_answer": false
+                "choice_text": "g cm^-3",
+                "is_answer": true
             }
         ]
     },
@@ -61,13 +61,13 @@
         "worksheet": {
             "worksheet_title": "Density"
         },
-        "question_text": "what is the density of water in kgm^-3",
-        "explanation": "1m by 1m by 1m is a big volume",
+        "question_text": "What is the density of water in kgm^-3",
+        "explanation": "A cube of 1m by 1m by 1m made out of water would have a lot of mass!",
         "mcqs": [
             {
                 "id": 21,
-                "choice_text": "\\(\\frac{10}{4x} \\approx 2^{12}\\)",
-                "is_answer": true
+                "choice_text": "1",
+                "is_answer": false
             },
             {
                 "id": 22,
@@ -82,7 +82,36 @@
             {
                 "id": 24,
                 "choice_text": "1000",
+                "is_answer": true
+            }
+        ]
+    },
+    {
+        "worksheet": {
+            "worksheet_title": "Density"
+        },
+        "question_text": "test",
+        "explanation": "",
+        "mcqs": [
+            {
+                "id": 61,
+                "choice_text": "frac(10)(4x) approx 2^(12)",
                 "is_answer": false
+            },
+            {
+                "id": 62,
+                "choice_text": "\\\\(\\\\frac{10}{4x} \\\\approx 2^{12}\\\\)",
+                "is_answer": false
+            },
+            {
+                "id": 63,
+                "choice_text": "\\\\(\\\\frac{10}{4x} \\\\approx 2^{12}\\\\)",
+                "is_answer": false
+            },
+            {
+                "id": 64,
+                "choice_text": "\\(\\frac{10}{4x} \\approx 2^{12}\\)",
+                "is_answer": true
             }
         ]
     }

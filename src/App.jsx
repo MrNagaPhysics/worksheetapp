@@ -4,10 +4,10 @@ import Home from './components/Home';
 import Quiz from "./components/Quiz"
 import { Box, Container } from '@mui/material';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
-import { MathJaxContext } from "better-react-mathjax";
+
 function App() {
   return (
-    <MathJaxContext>
+    
         <Container maxWidth="sm">
           <Box textAlign="center" mt={5}>
             <Router>
@@ -30,7 +30,6 @@ function App() {
             </Router>
           </Box>
         </Container>
-    </MathJaxContext>
   );
 }
 

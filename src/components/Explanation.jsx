@@ -1,4 +1,5 @@
-import { Box, Typography, Stack} from "@mui/material";
+import {Typography} from "@mui/material";
+import { MathJax } from "better-react-mathjax";
 
 const Explanation = ({ explanation, isCorrect}) => {
     if (isCorrect === null) {
@@ -6,7 +7,7 @@ const Explanation = ({ explanation, isCorrect}) => {
     }
     else if (isCorrect === true) {
         return (
-            explanation ? <Typography fontSize={17}>Correct! Explanation: {explanation}</Typography>:<Typography fontSize={17}>No explanation provided</Typography>
+            explanation ? <Typography fontSize={17}>Correct! Explanation: <MathJax>{explanation}</MathJax></Typography>:<Typography fontSize={17}>No explanation provided</Typography>
         )
     }
     else if (isCorrect === false) {
