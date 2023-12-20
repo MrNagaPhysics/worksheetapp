@@ -7,12 +7,12 @@ const Explanation = ({ explanation, isCorrect}) => {
     }
     else if (isCorrect === true) {
         return (
-            explanation ? <Typography fontSize={17}>Correct! Explanation: <MathJax>{explanation}</MathJax></Typography>:<Typography fontSize={17}>No explanation provided</Typography>
+            explanation ? <Typography fontSize={17}>Correct! Here is the explanation: <MathJax>{explanation}</MathJax></Typography>:<Typography fontSize={17}>No explanation provided</Typography>
         )
     }
     else if (isCorrect === false) {
         return (
-            explanation ? <Typography fontSize={17}>Incorrect, Explanation: {explanation}</Typography>:<Typography fontSize={17}>No explanation provided</Typography>
+            explanation ? <Typography fontSize={17}>Incorrect. Here is the explanation: {explanation}</Typography>:<Typography fontSize={17}>No explanation provided</Typography>
         )
     }
 

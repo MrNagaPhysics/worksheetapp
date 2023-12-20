@@ -120,7 +120,9 @@ function Quiz() {
             </Stack>
 
             {result?<></>:<>
-            <Typography mt={2} fontSize={20}><MathJax>{questionIndex+1}. {questionTitle}</MathJax></Typography>
+            <Typography mt={2} fontSize={20}>
+              <MathJax>Question {questionIndex+1}: {questionTitle}</MathJax>
+            </Typography>
 
             <ul>
               {

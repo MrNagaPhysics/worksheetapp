@@ -33,11 +33,11 @@
             "worksheet_title": "Density"
         },
         "question_text": "Which of the following is a unit for density.",
-        "explanation": "Density is mass per unit volume. The standard unit for mass is kg and volume is m^3 but g and cm^-3 is used sometimes.",
+        "explanation": "Density is mass per unit volume. The standard unit for mass is kg and volume is m^3 but g and cm^-3 is used sometimes.\r\n\r\n\\(\\frac{10}{4x} \\approx 2^{12}\\)",
         "mcqs": [
             {
                 "id": 17,
-                "choice_text": "kg m^-2",
+                "choice_text": "\\(kgm^{-2}\\)",
                 "is_answer": false
             },
             {
@@ -61,7 +61,7 @@
         "worksheet": {
             "worksheet_title": "Density"
         },
-        "question_text": "What is the density of water in kgm^-3",
+        "question_text": "What is the density of water in \\(kgm^{-3}\\)",
         "explanation": "A cube of 1m by 1m by 1m made out of water would have a lot of mass!",
         "mcqs": [
             {
@@ -82,35 +82,6 @@
             {
                 "id": 24,
                 "choice_text": "1000",
-                "is_answer": true
-            }
-        ]
-    },
-    {
-        "worksheet": {
-            "worksheet_title": "Density"
-        },
-        "question_text": "test",
-        "explanation": "",
-        "mcqs": [
-            {
-                "id": 61,
-                "choice_text": "frac(10)(4x) approx 2^(12)",
-                "is_answer": false
-            },
-            {
-                "id": 62,
-                "choice_text": "\\\\(\\\\frac{10}{4x} \\\\approx 2^{12}\\\\)",
-                "is_answer": false
-            },
-            {
-                "id": 63,
-                "choice_text": "\\\\(\\\\frac{10}{4x} \\\\approx 2^{12}\\\\)",
-                "is_answer": false
-            },
-            {
-                "id": 64,
-                "choice_text": "\\(\\frac{10}{4x} \\approx 2^{12}\\)",
                 "is_answer": true
             }
         ]
