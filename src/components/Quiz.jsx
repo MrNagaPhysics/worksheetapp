@@ -121,7 +121,7 @@ function Quiz() {
 
             {result?<></>:<>
             <Typography mt={2} fontSize={20}>
-              <MathJax>Question {questionIndex+1}: {questionTitle}</MathJax>
+              Question {questionIndex+1}: <MathJax> {questionTitle}</MathJax>
             </Typography>
 
             <ul>
