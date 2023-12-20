@@ -114,6 +114,13 @@ function Quiz() {
 
     return (
         <Box>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
             <Stack>
               <LinearProgress variant="determinate" value={((questionIndex)+(result?(1):(0)))/(length)*100} />
             </Stack>
