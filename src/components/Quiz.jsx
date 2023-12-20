@@ -6,7 +6,7 @@ import "./Quiz.css"
 import data from './testData.json'
 import Explanation from "./Explanation";
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import { MathJax, MathJaxContext} from "better-react-mathjax";
+// import { MathJax, MathJaxContext} from "better-react-mathjax";
 
 //
 function Quiz() {
@@ -130,7 +130,7 @@ function Quiz() {
                       mcq => {
                           return (
                             <li key={mcq.id} onClick={handleClickAnswer} id={mcq.choice_text}>
-                              <MathJax>{mcq.choice_text}</MathJax>
+                              {mcq.choice_text}
                             </li>
                           )
                       }
