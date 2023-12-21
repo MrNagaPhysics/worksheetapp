@@ -6,13 +6,14 @@ import "./Quiz.css"
 import data from './testData.json'
 import Explanation from "./Explanation";
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import { MathJax, MathJaxContext} from "better-react-mathjax";
-
+import Question from "./Question";
 //
 function Quiz() {
   const [allQuestions, setAllQuestions] = useState([]) //Used to store data for all questions within worksheet
   const [questionIndex, setQuestionIndex] = useState(0); // Used to store current index of question being practiced by user
   const [score, setScore] = useState(0) // Used to store number of correct answers user has selected
+  const [ questionImage, setQuestionImage] = useState(null); 
+  const [ answersImage, setAnswersImage] = useState(null);
 
   // States dealing with a single mcq question
   const [questionTitle, setQuestionTitle] = useState('')
@@ -37,6 +38,8 @@ function Quiz() {
           setQuestionTitle(response.data[questionIndex].question_text)
           setMCQOptions(response.data[questionIndex].mcqs)
           setExplanation(response.data[questionIndex].explanation)
+          setQuestionImage(response.data[questionIndex].question_image_url)
+          setAnswersImage(response.data[questionIndex].answers_image_url)
         }
       )
 
@@ -50,7 +53,10 @@ function Quiz() {
   //   setQuestionTitle(data[questionIndex].question_text)
   //   setMCQOptions(data[questionIndex].mcqs)
   //   setExplanation(data[questionIndex].explanation)
+  //   setQuestionImage(data[questionIndex].question_image_url)
+  //   setAnswersImage(data[questionIndex].answers_image_url)
   // }, [])
+
 
   const handleClickAnswer = (event) => {
     if(lock ===false){
@@ -89,6 +95,8 @@ function Quiz() {
         setExplanation(allQuestions[questionIndex + 1].explanation)
         setLock(false);
         setIsCorrect(null);
+        setQuestionImage(allQuestions[questionIndex + 1].questionImage)
+        setAnswersImage(allQuestions[questionIndex + 1].answerImage)
       }
     }
   }
@@ -101,6 +109,10 @@ function Quiz() {
     setLock(false);
     setResult(false);
     setIsCorrect(null)
+    console.log(allQuestions[0].question_image_url)
+    console.log(allQuestions[0].answers_image_url)
+    setQuestionImage(allQuestions[0].question_image_url)
+    setAnswersImage(allQuestions[0].answers_image_url)
   }
 
   const home = () => {
@@ -112,17 +124,20 @@ function Quiz() {
     window.location.href="https://www.mrnagaphysics.com";
   }
 
-    return (
-        <Box>
-            <Stack>
-              <LinearProgress variant="determinate" value={((questionIndex)+(result?(1):(0)))/(length)*100} />
-            </Stack>
+  return (
+      <Box>
+          <Stack>
+            <LinearProgress variant="determinate" value={((questionIndex)+(result?(1):(0)))/(length)*100} />
+          </Stack>
 
-            {result?<></>:<>
-            <Typography mt={2} fontSize={20}>
-              Question {questionIndex+1}:{questionTitle}
-            </Typography>
+          {result?<></>:<>
+          <Typography mt={2} fontSize={20}>
+            Question {questionIndex+1}:{questionTitle}
+          </Typography>
 
+          {questionImage?<img src={questionImage} width="200" />:<></>}
+          {/* <Question mcqOptions={mcqOptions} handleClickAnswer={handleClickAnswer}/> */}
+    
             <ul>
               {
                   mcqOptions.map(
@@ -135,31 +150,30 @@ function Quiz() {
                       }
                   )
               }
-            </ul>
-            
-            
-            <Box>
-              <Grid container my={1} spacing={2}>
-                <Grid item xs={8}>
-                <Explanation explanation={explanation} isCorrect={isCorrect}/>
-                </Grid>
-                <Grid item xs={4}>
-                <Button variant="contained" size="large" endIcon={<NavigateNextIcon/>} onClick={next}>Next</Button>
-                </Grid>
-              </Grid>
-            </Box>
-            
-            </>}
-            
-            {result?<><h2>You Scored {score} out of {length} </h2>
-            <Stack mt={5} direction="row" display="flex" justifyContent="space-around">
-            <Button variant="contained" size="large" onClick={reset}>Reset</Button>
-            <Button variant="contained" size="large" onClick={home}>Home</Button>
-            </Stack>
+            </ul> 
           
-            </>:<></>}
-            
-        </Box>        
-    );}
+          <Box>
+            <Grid container my={1} spacing={2}>
+              <Grid item xs={8}>
+              <Explanation explanation={explanation} isCorrect={isCorrect}/>
+              </Grid>
+              <Grid item xs={4}>
+              <Button variant="contained" size="large" endIcon={<NavigateNextIcon/>} onClick={next}>Next</Button>
+              </Grid>
+            </Grid>
+          </Box>
+          
+          </>}
+          
+          {result?<><h2>You Scored {score} out of {length} </h2>
+          <Stack mt={5} direction="row" display="flex" justifyContent="space-around">
+          <Button variant="contained" size="large" onClick={reset}>Reset</Button>
+          <Button variant="contained" size="large" onClick={home}>Home</Button>
+          </Stack>
+        
+          </>:<></>}  
+      </Box>        
+  )
+}
 
 export default Quiz;

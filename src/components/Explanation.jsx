@@ -1,5 +1,4 @@
 import {Typography} from "@mui/material";
-import { MathJax } from "better-react-mathjax";
 
 const Explanation = ({ explanation, isCorrect}) => {
     if (isCorrect === null) {

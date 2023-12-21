@@ -26,42 +26,46 @@
                 "choice_text": "The amount of kilograms per m^3",
                 "is_answer": false
             }
-        ]
+        ],
+        "question_image_url": "https://ams3.digitaloceanspaces.com/mrnagaphysics/media/images/density_question.jpg?AWSAccessKeyId=DO00Q9R42E4TB4NZUQBM&Signature=FulKYT06JNgK%2F1dq04O9SWxXiII%3D&Expires=1703199085",
+        "answers_image_url": null
     },
     {
         "worksheet": {
             "worksheet_title": "Density"
         },
         "question_text": "Which of the following is a unit for density.",
-        "explanation": "Density is mass per unit volume. The standard unit for mass is kg and volume is m^3 but g and cm^-3 is used sometimes.\r\n\r\n\\(\\frac{10}{4x} \\approx 2^{12}\\)",
+        "explanation": "Density is mass per unit volume. The standard unit for mass is kg and volume is $m^{3}$ but g and $cm^{-3}$ is used sometimes.",
         "mcqs": [
             {
                 "id": 17,
-                "choice_text": "\\(kgm^{-2}\\)",
+                "choice_text": "$kgm^{-2}$",
                 "is_answer": false
             },
             {
                 "id": 18,
-                "choice_text": "Nm^-3",
+                "choice_text": "$Nm^{-3}$",
                 "is_answer": false
             },
             {
                 "id": 19,
-                "choice_text": "kgms^-1",
+                "choice_text": "$kgms^{-1}$",
                 "is_answer": false
             },
             {
                 "id": 20,
-                "choice_text": "g cm^-3",
+                "choice_text": "$g cm^{-3}$",
                 "is_answer": true
             }
-        ]
+        ],
+        "question_image_url": null,
+        "answers_image_url": "https://ams3.digitaloceanspaces.com/mrnagaphysics/media/images/s.jpg?AWSAccessKeyId=DO00Q9R42E4TB4NZUQBM&Signature=QCJNmWxthzeimhCi3zB35qSV9bI%3D&Expires=1703199085"
     },
     {
         "worksheet": {
             "worksheet_title": "Density"
         },
-        "question_text": "What is the density of water in \\(kgm^{-3}\\)",
+        "question_text": "What is the density of water in $kgm^{-3}$",
         "explanation": "A cube of 1m by 1m by 1m made out of water would have a lot of mass!",
         "mcqs": [
             {
@@ -84,6 +88,8 @@
                 "choice_text": "1000",
                 "is_answer": true
             }
-        ]
+        ],
+        "question_image_url": null,
+        "answers_image_url": null
     }
 ]
